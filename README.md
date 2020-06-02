@@ -3,6 +3,8 @@
 This is a simple Arduino library for interfacing to TI's LM95235 ±0.75°C remote & local temperature sensor.
 The remote temperature sensor is useful for accurately providing cold junction compensation for a thermocouple measurement.
 
+https://github.com/OneGneissGuy/LM95235
+
 ## Methods
 
 ### Constructor LM95235(I2C_address)
