@@ -1,6 +1,6 @@
 # LM95235 Arduino Library
 
-This is a simple Arduino library for interfacing to the TI's LM95235 ±0.75°C remote & local temperature sensor.
+This is a simple Arduino library for interfacing to TI's LM95235 ±0.75°C remote & local temperature sensor.
 
 ## Methods
 
