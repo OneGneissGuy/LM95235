@@ -2,63 +2,40 @@
 
 This is a simple Arduino library for interfacing to the TI's LM95235 ±0.75°C remote & local temperature sensor.
 
-
-
-## Version History
-
-## Pinout
-
-| Pin Number | Pin Name | Type                 | Description                                                                                                |
-| ---------- | -------- | -------------------- | ---------------------------------------------------------------------------------------------------------- |
-| 1          | VDD      | Power                | Device power supply. Add bypass capacitor of 10 μF, 0.1 μF and 100 pF. Place 100 pF closest to device pin. |
-| 2          | D+       | Analog Input/Output  | Positive input from the thermal diode.                                                                     |
-| 3          | D-       | Analog Input/Output  | Negative input from the thermal diode.                                                                     |
-| 4          | T_CRIT   | Digital Output       | Critical temperature output. Open-drain output requires pull-up resistor. Active low.                      |
-| 5          | GND      | Ground               | Device ground.                                                                                             |
-| 6          | OS/A0    | Digital Input/Output | Address input. Can be tied to VDD, GND, or VDD/2.                                                          |
-| 7          | SMBDAT   | Digital Input/Output | SMBus interface data pin. Open-drain output requires pull-up resistor.                                     |
-| 8          | SMBCLK   | Digital Input        | SMBus interface clock pin.                                                                                 |
-
-## Programmable I2C address
-
-| Pin Name | Setting | I2C Address |
-| -------- | ------- | ----------- |
-| OS/A0    | GND     | 0x18        |
-| OS/A0    | VDD/2   | 0x29        |
-| OS/A0    | VDD     | 0x4C        |
-
-
 ## Methods
 
 ### Constructor LM95235(I2C_address)
  
-Description: Constructor for the LM95235 device.
-Parameters: 7-bit I2C address
-Returns: None
-Example:
-```
-#define LM95235_addr 0x18 //A0 tied to ground
-LM95235 lmtemp = LM95235(LM95235_addr);
-```
+* Description: Constructor for the LM95235 device.
+* Parameters: 7-bit I2C address
+* Returns: None
+
+* Example:
+    ```
+    #define LM95235_addr 0x18 //A0 tied to ground
+    LM95235 lmtemp = LM95235(LM95235_addr);
+    ```
 
 ### begin() 
-Description: Initializes anything ... it does a reset.
-Parameters: None
-Returns: None
-Example: `lmtemp.begin();`
+* Description: Initializes anything ... it does a reset.
+* Parameters: None
+* Returns: None
+* Example: `lmtemp.begin();`
 
 ### get_remote_temperature()
-Description: Read the temperature of the remote device.
-Parameters: None
-Returns: `float` temperature in celcius with resolution determined by filter `CFG2_REMOTE_FILTER_EN/CFG2_REMOTE_FILTER_DIS` status (On/EN=0.03125 C, off/DIS = 0.125 C) 
-Example: `float remote_temperature = lmtemp.get_remote_temperature()`
 
+* Description: Read the temperature of the remote device.
+* Parameters: None
+* Returns: `float` temperature in celcius with resolution determined by filter `CFG2_REMOTE_FILTER_EN/CFG2_REMOTE_FILTER_DIS` status (On/EN=0.03125 C, off/DIS = 0.125 C) 
+* Example: `float remote_temperature = lmtemp.get_remote_temperature()`
 
 ## Examples
 
 You can find examples in the examples folder of this library.
 
-## Information
+## Version History
+
+## More Information
 
 The LM95235 is an 11-bit digital temperature sensor
 with a 2-wire SMBus/I2C 
@@ -136,3 +113,25 @@ More info is available on the products [website](https://www.ti.com/product/LM95
 | ------------------- | ----------------- | ----------- | ------------------------- |
 | MANUFACTURER_ID     | 0x01              |             | Manufacturers ID Register |
 | LM95235_REVISION    | 0xB1              |             | Revision ID Register      |
+
+
+## Pinout
+
+| Pin Number | Pin Name | Type                 | Description                                                                                                |
+| ---------- | -------- | -------------------- | ---------------------------------------------------------------------------------------------------------- |
+| 1          | VDD      | Power                | Device power supply. Add bypass capacitor of 10 μF, 0.1 μF and 100 pF. Place 100 pF closest to device pin. |
+| 2          | D+       | Analog Input/Output  | Positive input from the thermal diode.                                                                     |
+| 3          | D-       | Analog Input/Output  | Negative input from the thermal diode.                                                                     |
+| 4          | T_CRIT   | Digital Output       | Critical temperature output. Open-drain output requires pull-up resistor. Active low.                      |
+| 5          | GND      | Ground               | Device ground.                                                                                             |
+| 6          | OS/A0    | Digital Input/Output | Address input. Can be tied to VDD, GND, or VDD/2.                                                          |
+| 7          | SMBDAT   | Digital Input/Output | SMBus interface data pin. Open-drain output requires pull-up resistor.                                     |
+| 8          | SMBCLK   | Digital Input        | SMBus interface clock pin.                                                                                 |
+
+## Programmable I2C address
+
+| Pin Name | Setting | I2C Address |
+| -------- | ------- | ----------- |
+| OS/A0    | GND     | 0x18        |
+| OS/A0    | VDD/2   | 0x29        |
+| OS/A0    | VDD     | 0x4C        |
