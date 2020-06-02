@@ -11,7 +11,7 @@ This is a simple Arduino library for interfacing to TI's LM95235 ±0.75°C remot
 * Returns: None
 
 * Example:
-    ```
+    ```cpp
     #define LM95235_addr 0x18 //A0 tied to ground
     LM95235 lmtemp = LM95235(LM95235_addr);
     ```
@@ -27,14 +27,17 @@ This is a simple Arduino library for interfacing to TI's LM95235 ±0.75°C remot
 * Description: Read the temperature of the remote device.
 * Parameters: None
 * Returns: `float` temperature in celcius with resolution determined by filter `CFG2_REMOTE_FILTER_EN/CFG2_REMOTE_FILTER_DIS` status (On/EN=0.03125 C, off/DIS = 0.125 C) 
-* Example: `float remote_temperature = lmtemp.get_remote_temperature()`
+* Example: 
+  ```cpp
+  float remote_temperature = lmtemp.get_remote_temperature()
+  ```
 
 ## Examples
 
 You can find examples in the examples folder of this library.
 
 ## Version History
-
+ 0.1 initial commit
 ## More Information
 
 The LM95235 is an 11-bit digital temperature sensor
@@ -128,6 +131,8 @@ More info is available on the products [website](https://www.ti.com/product/LM95
 | 7          | SMBDAT   | Digital Input/Output | SMBus/I2C interface data pin. Open-drain output requires pull-up resistor (e.g. 4.7 kOhm).                 |
 | 8          | SMBCLK   | Digital Input        | SMBus/I2C interface  clock pin.  Open-drain output requires pull-up resistor (e.g. 4.7 kOhm).              |
 
+![ic][docs/ic-pinout.png]
+
 ## Programmable I2C address
 
 | Pin Name | Setting | I2C Address |
@@ -135,3 +140,7 @@ More info is available on the products [website](https://www.ti.com/product/LM95
 | OS/A0    | GND     | 0x18        |
 | OS/A0    | VDD/2   | 0x29        |
 | OS/A0    | VDD     | 0x4C        |
+
+## Schematic
+![schematic][docs/wiring-sch.png]
+
