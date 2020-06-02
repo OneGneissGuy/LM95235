@@ -18,10 +18,18 @@ The remote temperature sensor is useful for accurately providing cold junction c
     ```
 
 ### begin() 
-* Description: Initializes anything ... it does a reset.
+
+* Description: Wraps `Wire.begin()`.
 * Parameters: None
 * Returns: None
 * Example: `lmtemp.begin();`
+
+### configure()
+
+* Description: Initializes anything ... it does a reset.
+* Parameters: None
+* Returns: None
+* Example: `lmtemp.configure();`
 
 ### get_remote_temperature()
 
