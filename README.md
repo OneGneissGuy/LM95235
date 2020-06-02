@@ -140,6 +140,6 @@ More info is available on the products [website](https://www.ti.com/product/LM95
 | OS/A0    | VDD/2   | 0x29        |
 | OS/A0    | VDD     | 0x4C        |
 
-## Schematic
+## Wiring Schematic
 ![schematic](docs/wiring-sch.png)
 
