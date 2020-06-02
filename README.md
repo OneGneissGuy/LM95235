@@ -120,7 +120,7 @@ More info is available on the products [website](https://www.ti.com/product/LM95
 
 
 ## Pinout
-![ic](docs/ic-pinout.png)
+![ic](extras/ic-pinout.png)
 
 | Pin Number | Pin Name | Type                 | Description                                                                                                |
 | ---------- | -------- | -------------------- | ---------------------------------------------------------------------------------------------------------- |
@@ -142,5 +142,5 @@ More info is available on the products [website](https://www.ti.com/product/LM95
 | OS/A0    | VDD     | 0x4C        |
 
 ## Wiring Schematic
-![schematic](docs/wiring-sch.png)
+![schematic](extras/wiring-sch.png)
 
