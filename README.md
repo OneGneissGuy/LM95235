@@ -49,6 +49,24 @@ You can find examples in the examples folder of this library.
 
 ## Version History
  0.1 initial commit
+
+ ## Packaging
+
+Just zip up all the contents a .zip
+or download this repository as a .zip from GitHub.
+
+## Using library
+
+In Arduino IDE menu, go to `Sketch -> Include Libray -> Add ZIP Library`.
+
+After including it, you can add the include headers to your current
+sketch with `Sketch -> Include Library -> LM95235`.
+
+## Running examples
+
+You can open the example from the Arduino IDE by going to the menu
+`File -> Examples -> LM95235 -> readRemoteTemperature`.
+
 ## More Information
 
 The LM95235 is an 11-bit digital temperature sensor
