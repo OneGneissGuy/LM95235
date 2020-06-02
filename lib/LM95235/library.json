@@ -1,0 +1,16 @@
+{
+    "name": "LM95235",
+    "keywords": "Diode, Temperature, Remote",
+    "authors": {
+        "name": "John Franco Saraceno",
+        "email": "jfsaraceno@gmail.com",
+        "url": "https://github.com/onegneissguy/LM95235"
+    },
+    "description": "This is a simple Arduino library for interfacing to TI's LM95235 ±0.75°C remote & local temperature sensor.",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/OneGneissGuy/LM95235.git"
+    },
+    "frameworks": "arduino",
+    "platforms": "espressif32"
+}
