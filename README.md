@@ -131,8 +131,7 @@ More info is available on the products [website](https://www.ti.com/product/LM95
 | 7          | SMBDAT   | Digital Input/Output | SMBus/I2C interface data pin. Open-drain output requires pull-up resistor (e.g. 4.7 kOhm).                 |
 | 8          | SMBCLK   | Digital Input        | SMBus/I2C interface  clock pin.  Open-drain output requires pull-up resistor (e.g. 4.7 kOhm).              |
 
-![ic][docs/ic-pinout.png]
-
+![ic](docs/ic-pinout.png)
 ## Programmable I2C address
 
 | Pin Name | Setting | I2C Address |
@@ -142,5 +141,5 @@ More info is available on the products [website](https://www.ti.com/product/LM95
 | OS/A0    | VDD     | 0x4C        |
 
 ## Schematic
-![schematic][docs/wiring-sch.png]
+![schematic](docs/wiring-sch.png)
 
