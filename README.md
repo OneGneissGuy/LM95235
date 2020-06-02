@@ -125,8 +125,8 @@ More info is available on the products [website](https://www.ti.com/product/LM95
 | 4          | T_CRIT   | Digital Output       | Critical temperature output. Open-drain output requires pull-up resistor. Active low.                      |
 | 5          | GND      | Ground               | Device ground.                                                                                             |
 | 6          | OS/A0    | Digital Input/Output | Address input. Can be tied to VDD, GND, or VDD/2.                                                          |
-| 7          | SMBDAT   | Digital Input/Output | SMBus interface data pin. Open-drain output requires pull-up resistor.                                     |
-| 8          | SMBCLK   | Digital Input        | SMBus interface clock pin.                                                                                 |
+| 7          | SMBDAT   | Digital Input/Output | SMBus/I2C interface data pin. Open-drain output requires pull-up resistor (e.g. 4.7 kOhm).                 |
+| 8          | SMBCLK   | Digital Input        | SMBus/I2C interface  clock pin.  Open-drain output requires pull-up resistor (e.g. 4.7 kOhm).              |
 
 ## Programmable I2C address
 
