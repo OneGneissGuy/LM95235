@@ -4,7 +4,7 @@
 
 /**************************************************************************/
 /*
-	Initializing the ADS1100 class
+	Initializing the LM95235 class
 */
 /**************************************************************************/
 LM95235::LM95235(byte address)
@@ -14,7 +14,7 @@ LM95235::LM95235(byte address)
 
 /**************************************************************************/
 /*
-	Starts the I2C communication (Wire.begin) with the ADS1100 unit
+	Starts the I2C communication (Wire.begin) with the LM95235 unit
 */
 /**************************************************************************/
 void LM95235::begin(void)
@@ -24,7 +24,7 @@ void LM95235::begin(void)
 
 /**************************************************************************/
 /*
-	Parameters: None Description: Configures the operation mode of the ADS1100 unit.
+	Parameters: None Description: Configures the operation mode of the LM95235 unit.
 	Possible options:  (ADS1100_CONVERSION_SINGLE or ADS1100_CONVERSION_CONTINOUS, ADS1100_DATA_RATE_128SPS or ADS1100_DATA_RATE_32SPS or ADS1100_DATA_RATE_16SPS or ADS1100_DATA_RATE_8SPS, ADS1100_GAIN_1X or ADS1100_GAIN_2X or ADS1100_GAIN_4X or ADS1100_GAIN_8X)
 	
 */
@@ -37,7 +37,6 @@ void LM95235::configure()
     Wire.write(0x00); //Point to local temperature  MSB
     // Stop I2C Transmission
     Wire.endTransmission();
-    currentRegister = 0x00;
     Wire.beginTransmission(LM95235_i2cAddress);
 #if ARDUINO >= 100
     Wire.write((uint8_t)currentRegister);
@@ -114,12 +113,21 @@ uint8_t LM95235::getuintbyte(void)
     return value;
 }
 
-/* Conversions */
+/**************************************************************************/
+/*
+	Return the temperature field from unsigned temperature register values
+*/
+/**************************************************************************/
 int LM95235::temp_from_reg_unsigned(unsigned int val_h, unsigned int val_l)
 {
     return val_h * 1000 + val_l * 1000 / 256;
 }
 
+/**************************************************************************/
+/*
+	Return the temperature field from signed temperature register values
+*/
+/**************************************************************************/
 int LM95235::temp_from_reg_signed(unsigned int val_h, unsigned int val_l)
 {
     if (val_h & 0x80)

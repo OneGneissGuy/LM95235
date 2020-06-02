@@ -14,7 +14,8 @@ void setup()
     Serial.begin(9600);
     // Initialise I2C communication as MASTER
     lmtemp.begin();
-    delay(300);
+    lmtemp.configure()
+        delay(300);
 }
 
 void loop()

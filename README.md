@@ -3,6 +3,8 @@
 This is a simple Arduino library for interfacing to TI's LM95235 ±0.75°C remote & local temperature sensor.
 The remote temperature sensor is useful for accurately providing cold junction compensation for a thermocouple measurement.
 
+https://github.com/OneGneissGuy/LM95235
+
 ## Methods
 
 ### Constructor LM95235(I2C_address)
@@ -18,10 +20,18 @@ The remote temperature sensor is useful for accurately providing cold junction c
     ```
 
 ### begin() 
-* Description: Initializes anything ... it does a reset.
+
+* Description: Wraps `Wire.begin()`.
 * Parameters: None
 * Returns: None
 * Example: `lmtemp.begin();`
+
+### configure()
+
+* Description: Initializes anything ... it does a reset.
+* Parameters: None
+* Returns: None
+* Example: `lmtemp.configure();`
 
 ### get_remote_temperature()
 
@@ -39,6 +49,24 @@ You can find examples in the examples folder of this library.
 
 ## Version History
  0.1 initial commit
+
+ ## Packaging
+
+Just zip up all the contents a .zip
+or download this repository as a .zip from GitHub.
+
+## Using library
+
+In Arduino IDE menu, go to `Sketch -> Include Libray -> Add ZIP Library`.
+
+After including it, you can add the include headers to your current
+sketch with `Sketch -> Include Library -> LM95235`.
+
+## Running examples
+
+You can open the example from the Arduino IDE by going to the menu
+`File -> Examples -> LM95235 -> readRemoteTemperature`.
+
 ## More Information
 
 The LM95235 is an 11-bit digital temperature sensor
@@ -120,7 +148,7 @@ More info is available on the products [website](https://www.ti.com/product/LM95
 
 
 ## Pinout
-![ic](docs/ic-pinout.png)
+![ic](extras/ic-pinout.png)
 
 | Pin Number | Pin Name | Type                 | Description                                                                                                |
 | ---------- | -------- | -------------------- | ---------------------------------------------------------------------------------------------------------- |
@@ -142,5 +170,5 @@ More info is available on the products [website](https://www.ti.com/product/LM95
 | OS/A0    | VDD     | 0x4C        |
 
 ## Wiring Schematic
-![schematic](docs/wiring-sch.png)
+![schematic](extras/wiring-sch.png)
 
