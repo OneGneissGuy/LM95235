@@ -1,17 +1,10 @@
 # LM95235 Arduino Library
 
-## Library for TI's LM95235 ±0.75°C remote & local temperature sensor.
+This is a simple Arduino library for interfacing to the TI's LM95235 ±0.75°C remote & local temperature sensor.
 
-The LM95235 is an 11-bit digital temperature sensor
-with a 2-wire SMBus/I2C
-interface and TruTherm technology that can monitor
-the temperature of a remote diode as well as its own
-temperature.The LM95235 can be used to very
-accurately monitor the temperature of external
-devices  or a diode-connected MMBT3904 transistor.
 
-[Datasheet](https://www.ti.com/product/LM95235?qgpn=lm95235)
 
+## Version History
 
 ## Pinout
 
@@ -35,11 +28,47 @@ devices  or a diode-connected MMBT3904 transistor.
 | OS/A0    | VDD     | 0x4C        |
 
 
-## Available Commands
+## Methods
 
-`.begin()`
+### Constructor LM95235(I2C_address)
+ 
+Description: Constructor for the LM95235 device.
+Parameters: 7-bit I2C address
+Returns: None
+Example:
+```
+#define LM95235_addr 0x18 //A0 tied to ground
+LM95235 lmtemp = LM95235(LM95235_addr);
+```
 
-`.get_remote_temperature()`
+### begin() 
+Description: Initializes anything ... it does a reset.
+Parameters: None
+Returns: None
+Example: `lmtemp.begin();`
+
+### get_remote_temperature()
+Description: Read the temperature of the remote device.
+Parameters: None
+Returns: `float` temperature in celcius with resolution determined by filter `CFG2_REMOTE_FILTER_EN/CFG2_REMOTE_FILTER_DIS` status (On/EN=0.03125 C, off/DIS = 0.125 C) 
+Example: `float remote_temperature = lmtemp.get_remote_temperature()`
+
+
+## Examples
+
+You can find examples in the examples folder of this library.
+
+## Information
+
+The LM95235 is an 11-bit digital temperature sensor
+with a 2-wire SMBus/I2C 
+interface and TruTherm technology that can monitor
+the temperature of a remote diode as well as its own
+temperature.The LM95235 can be used to very
+accurately monitor the temperature of external
+devices  or a diode-connected MMBT3904 transistor.
+
+More info is available on the products [website](https://www.ti.com/product/LM95235?qgpn=lm95235) and the [datasheet](https://www.ti.com/lit/gpn/lm95235).
 
 ## Device Registers 
 | Register assignment                 | Register Address | Description | Register name                    |
