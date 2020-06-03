@@ -1,0 +1,10 @@
+LM95235	KEYWORD1
+begin	KEYWORD2
+configuration	KEYWORD2
+get_remote_temperature	KEYWORD2
+point_register	KEYWORD2
+getuintbyte	KEYWORD2
+getvalue	KEYWORD2
+point_register	KEYWORD2
+temp_from_reg_unsigned	KEYWORD2
+temp_from_reg_signed	KEYWORD2

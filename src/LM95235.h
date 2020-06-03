@@ -105,7 +105,7 @@ class LM95235
 {
 public:
     LM95235(uint8_t address);
-    int16_t value; // value of the ADC returned
+    int16_t value; // value of the register returned
     void begin(void);
     int16_t getvalue(void);    // reading the value regardless of the fact it is available
     uint8_t getuintbyte(void); // reading an uint8_t value
@@ -113,12 +113,9 @@ public:
     void point_register(int reg_addr);
 
     void configure(void);
-    uint8_t conversionDone();
-    void startSingleConversion();
     int temp_from_reg_unsigned(unsigned int val_h, unsigned int val_l);
     int temp_from_reg_signed(unsigned int val_h, unsigned int val_l);
 
 private:
-    uint8_t LM95235_i2cAddress;          // I2C address of the unit
-    uint8_t currentRegister = B00001100; // the last register used
+    uint8_t LM95235_i2cAddress; // I2C address of the unit
 };
