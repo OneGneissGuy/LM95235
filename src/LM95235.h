@@ -9,15 +9,15 @@
     accurately monitor the temperature of external
     devices  or a diode-connected MMBT3904 transistor.
 
-	
-	The unit is made by Texas Instruments, 
-    Precision Remote Diode Temperature Sensor with SMBus Interface and TruThermTM
+	The unit is a Precision Remote Diode Temperature 
+    Sensor with SMBus Interface and TruThermTM
     Technology
+
 	https://www.ti.com/product/LM95235?qgpn=lm95235
-	
+
 	The library updated on XXXXXX by JohnFranco Saraceno
     Github: https://github.com/onegneissguy/LM95235
-	
+
 	GNU General Public License v3.0
 	Distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
 	without even the implied warranty of 
@@ -25,12 +25,7 @@
 */
 /**************************************************************************/
 
-#if ARDUINO >= 100
 #include "Arduino.h"
-#else
-#include "WProgram.h"
-#endif
-
 #include <Wire.h>
 
 /**************************************************************************
@@ -117,7 +112,6 @@ public:
     float get_remote_temperature();
     void point_register(int reg_addr);
 
-    // void configure(uint8_t singleMode, uint8_t dataRate, uint8_t gain);
     void configure(void);
     uint8_t conversionDone();
     void startSingleConversion();

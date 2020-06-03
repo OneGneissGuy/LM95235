@@ -25,24 +25,15 @@ void LM95235::begin(void)
 /**************************************************************************/
 /*
 	Parameters: None Description: Configures the operation mode of the LM95235 unit.
-	Possible options:  (ADS1100_CONVERSION_SINGLE or ADS1100_CONVERSION_CONTINOUS, ADS1100_DATA_RATE_128SPS or ADS1100_DATA_RATE_32SPS or ADS1100_DATA_RATE_16SPS or ADS1100_DATA_RATE_8SPS, ADS1100_GAIN_1X or ADS1100_GAIN_2X or ADS1100_GAIN_4X or ADS1100_GAIN_8X)
-	
+
 */
 /**************************************************************************/
 void LM95235::configure()
 {
-
     Wire.beginTransmission(LM95235_i2cAddress);
-    // Wire.write(LM95235_REG_RW_CONFIG1); //Point to CONFIG REGISTER LM95245_REG_RW_CONFIG1 AND UPDATE (DEFAULT on POR is 0x00)
+    //Point to CONFIG REGISTER LM95245_REG_RW_CONFIG1 AND UPDATE (DEFAULT on POR is 0x00)
     Wire.write(0x00); //Point to local temperature  MSB
     // Stop I2C Transmission
-    Wire.endTransmission();
-    Wire.beginTransmission(LM95235_i2cAddress);
-#if ARDUINO >= 100
-    Wire.write((uint8_t)currentRegister);
-#else
-    Wire.send(currentRegister);
-#endif
     Wire.endTransmission();
 }
 
